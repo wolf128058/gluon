@@ -1,0 +1,17 @@
+#!/usr/bin/lua
+
+local uci = require('simple-uci').cursor()
+
+for _, zone in ipairs({'mesh'}) do
+	uci:section('firewall', 'rule', 'mesh_usteer', {
+		name =  zone .. '_usteer',
+		src = zone,
+		family = 'ipv6',
+		src_ip = 'fe80::/64',
+		proto = 'udp',
+		dest_port = '16720',
+		target = 'ACCEPT',
+	})
+end
+
+uci:save('firewall')

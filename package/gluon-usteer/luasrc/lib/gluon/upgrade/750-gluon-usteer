@@ -1,0 +1,71 @@
+#!/usr/bin/lua
+
+local site = require 'gluon.site'
+local uci = require('simple-uci').cursor()
+
+-- Remove default configuration
+uci:delete_all('usteer', 'usteer')
+
+uci:section('usteer', 'usteer', 'usteer', {
+	--Generic
+	syslog = 1,
+	ipv6 = 1,
+	debug_level = 2,
+
+	-- Neighbor count communicated to STAs
+	max_neighbor_reports = 8,
+
+	-- Signal levels
+	signal_diff_threshold = 10,
+	min_snr = -80,
+	roam_scan_snr = -70,
+	roam_scan_tries = 7,
+	roam_trigger_snr = -75,
+
+	-- usteer communication
+	remote_update_interval = 2500,
+	-- ToDo: broken in usteer
+	remote_node_timeout = 20,
+})
+
+local usteer_ifaces = {}
+
+-- Add wired communication interfaces
+if site.mesh.vxlan(true) then
+	table.insert(usteer_ifaces, 'vx_mesh_lan')
+	table.insert(usteer_ifaces, 'vx_mesh_wan')
+else
+	table.insert(usteer_ifaces, 'mesh_lan')
+	table.insert(usteer_ifaces, 'mesh_wan')
+end
+
+-- Add wireless communication interfaces
+uci:foreach('wireless', 'wifi-device', function(config)
+	-- Add mesh-interface for each radio.
+	-- This is independent from whether the interfaces
+	-- exists or not (Outdoor-mode). usteer will not
+	-- fail startup on missing interfaces.
+	table.insert(usteer_ifaces, 'mesh_' .. config['.name'])
+end)
+
+-- Save communication interfaces
+uci:set('usteer', 'usteer', 'network', usteer_ifaces)
+
+-- Only operate on client-SSIDs. Avoid leaking information about
+-- private-WiFi clients.
+local all_ssids = {}
+local usteer_ssids = {}
+
+uci:foreach('wireless', 'wifi-iface', function(config)
+	if config['network'] ~= 'client' then return end
+
+	all_ssids[config['ssid']] = 1
+end)
+
+for k, _ in pairs(all_ssids) do
+	table.insert(usteer_ssids, k)
+end
+
+uci:set('usteer', 'usteer', 'ssid_list', usteer_ssids)
+
+uci:save('usteer')
