@@ -556,3 +556,80 @@ textarea {
 	margin-bottom: 0.5em;
 	padding: 0.5em
 }
+
+#menubar {
+	a:link.topcat.active,
+	a:visited.topcat.active {
+		background: $ffzusatz;
+		color: white;
+	}
+}
+
+h2 {
+	color: $ffzusatz;
+	padding: 1rem;
+}
+
+fieldset.gluon-section {
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+}
+
+.gluon-section legend {
+	padding: 1rem;
+}
+
+input[type="checkbox"] + label, select {
+	border: 1px solid #c0c0c0;
+	margin-top: 0;
+	margin-bottom: 1px;
+}
+
+input,
+option,
+select,
+input[type="checkbox"] + label,
+textarea,
+ul.tabmenu li a:hover,
+#menubar a:link.topcat:hover,
+#menubar a:link.topcat:focus,
+#menubar a:visited.topcat:hover,
+#menubar a:visited.topcat:focus {
+	background-color: #99d9F5;
+}
+
+#maincontent {
+	background-color: rgba(255, 255, 255, 0.333);
+	padding: 0;
+}
+
+.gluon-page-actions {
+	padding: 1rem;
+}
+
+.gluon-form-descr,
+.gluon-section-descr {
+	margin: 0 1rem 1rem;
+}
+
+#maincontent,
+.gluon-button,
+.gluon-form-descr,
+.gluon-section-descr {
+	border-radius: 0.5rem;
+}
+
+.gluon-page-actions {
+	border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.gluon-value:last-child {
+	padding-bottom: 1rem;
+}
+
+textarea,
+.gluon-form > p,
+form > p {
+	margin: 0 1rem;
+}
+
