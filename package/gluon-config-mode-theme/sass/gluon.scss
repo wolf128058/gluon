@@ -32,7 +32,7 @@ $red:       #ee3300;
 	user-select: none;
 
 	font-size: 100%;
-	padding: 0.5em 1em;
+	padding: 0.5rem 1rem;
 	color: rgba(0, 0, 0, 0.80);
 	background-color: #E6E6E6;
 	border: none;
@@ -82,7 +82,7 @@ body, input, select, option {
 
 body {
 	color: rgb(77, 78, 83);
-	line-height: 1.5em;
+	line-height: 1.5rem;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -98,22 +98,22 @@ body {
 ul.tabmenu {
 	list-style: none;
 	padding: 0;
-	margin: 2em 0;
+	margin: 2rem 0;
 	display: inline-flex;
 
 	li {
 		white-space: nowrap;
-		margin: 0 0.5em;
+		margin: 0 0.5erm;
 		padding: 0;
 		text-align: center;
 
 		a {
 			display: block;
 			text-decoration: none;
-			padding: 1em;
+			padding: 1rem;
 			margin: 0;
 			color: #333;
-			border-radius: 2em;
+			border-radius: 2rem;
 
 			&:hover {
 				background: lighten($ffyellow, 35);
@@ -144,7 +144,7 @@ ul.tabmenu {
 	a:visited.topcat {
 		position: relative;
 		display: block;
-		padding: 0.5em;
+		padding: 0.5rem;
 		text-decoration: none;
 		font-size: 80%;
 		font-weight: normal;
@@ -165,7 +165,7 @@ ul.tabmenu {
 	.hostinfo {
 		position: relative;
 		margin: 0;
-		padding: 0.5em;
+		padding: 0.5rem;
 		flex: 1;
 		font-weight: bold;
 		font-size: 80%;
@@ -195,60 +195,59 @@ ul.tabmenu {
 }
 
 #maincontent {
-	max-width: 60em;
-	min-width: 40em;
-	margin: 1em auto;
+	max-width: 60rem;
+	margin: 1rem auto;
 	background-color: rgba(255, 255, 255, 0.333);
 	padding: 0;
 	border-radius: 0.5rem;
 
 	p {
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 	}
 
 	ul {
-		margin-left: 2em;
+		margin-left: 2rem;
 	}
 }
 
 .gluon-section {
-	margin: 0 0 1.3em;
+	margin: 0 0 1.25rem;
 	padding: 0;
 	border: none;
 
 	&:last-child {
-		margin-bottom: 0.7em;
+		margin-bottom: 0.75rem;
 	}
 
 	legend {
-		font-size: 1.4em;
+		font-size: 1.5rem;
 		font-weight: bold;
 		position: relative;
-		margin-bottom: 0.5em;
+		margin-bottom: 0.5rem;
 		padding: 1rem;
 	}
 
 	h2 {
-		margin: 0 0 0.5em -0.5em;
+		margin: 0 0 0.5rem -0.5rem;
 	}
 
 	h3 {
 		text-decoration: none;
 		font-weight: bold;
 		color: #555555;
-		margin: 0.25em;
+		margin: 0.25rem;
 		font-size: 100%;
 	}
 }
 
 .gluon-section-descr {
-	margin-bottom: 2em;
+	margin-bottom: 2rem;
 }
 
 .gluon-osm-map {
 	width: 100%;
-	height: 40em;
-	margin-bottom: 1em;
+	height: 40rem;
+	margin-bottom: 1rem;
 }
 
 input {
@@ -263,8 +262,8 @@ input {
 		& + label {
 			display: inline-block;
 			position: relative;
-			width: 1em;
-			height: 1em;
+			width: 1rem;
+			height: 1rem;
 			margin: 0;
 		}
 
@@ -275,10 +274,10 @@ input {
 			position: absolute;
 			top: 50%;
 			left: 0;
-			margin-top: -0.5em;
+			margin-top: -0.5rem;
 			width: 100%;
 			text-align: center;
-			font-size: 1.7em;
+			font-size: 1.7rem;
 		}
 	}
 
@@ -288,10 +287,10 @@ input {
 		& + label {
 			display: inline-block;
 			position: relative;
-			width: 0.8em;
-			height: 0.8em;
-			padding: 0.5em;
-			margin: 0.2em 0.2em 0.2em 0.1em;
+			width: 0.75rem;
+			height: 0.75rem;
+			padding: 0.75rem;
+			margin: 0.25rem 0.25rem 0.25rem 0.125rem;
 			border: none;
 			background: lighten($ffyellow, 30);
 			vertical-align: middle;
@@ -305,10 +304,10 @@ input {
 			position: absolute;
 			top: 50%;
 			left: 0;
-			margin-top: -0.4em;
+			margin-top: -0.5rem;
 			width: 100%;
 			text-align: center;
-			font-size: 2em;
+			font-size: 2rem;
 		}
 	}
 
@@ -327,7 +326,7 @@ input[type=checkbox] + label {
 	border: none;
 	background: lighten($ffyellow, 30);
 	border-radius: 3pt;
-	padding: 0.5em;
+	padding: 0.5rem;
 	margin-top: 1px;
 	margin-bottom: 2px;
 	box-sizing: content-box;
@@ -341,13 +340,13 @@ input[type=checkbox] + label {
 	&::before {
 		position: absolute;
 		z-index: 1;
-		right: 0.05em;
-		top: calc(2px + 0.1em);
-		bottom: calc(2px + 0.1em);
-		width: 1.4em;
-		border-left: 0.05em solid rgba(0, 0, 0, 0.25);
+		right: 0.125rem;
+		top: calc(2px + 0.125rem);
+		bottom: calc(2px + 0.125rem);
+		width: 1.5rem;
+		border-left: 0.125rem solid rgba(0, 0, 0, 0.25);
 		pointer-events: none;
-		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="8" height="5"><path fill="none" stroke="black" stroke-linejoin="bevel" d="M1,1L4,4L7,1"/></svg>') center / 0.8em 0.5em no-repeat;
+		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="8" height="5"><path fill="none" stroke="black" stroke-linejoin="bevel" d="M1,1L4,4L7,1"/></svg>') center / 0.75rem 0.5rem no-repeat;
 		content: '';
 	}
 
@@ -367,13 +366,13 @@ option {
 select,
 input[type=text],
 input[type=password] {
-	min-width: 20em;
+	min-width: 20rem;
 }
 
 .gluon-button {
 	@include button;
 
-	margin-left: 0.5em;
+	margin-left: 0.5rem;
 	background-repeat: no-repeat;
 }
 
@@ -399,13 +398,13 @@ input[type=password] {
 
 textarea {
 	margin-left: -1px;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .gluon-value {
 	display: flex;
 	flex-direction: row;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .gluon-section-node .gluon-value:last-child {
@@ -415,8 +414,8 @@ textarea {
 .gluon-value-title {
 	flex: 2;
 	text-align: right;
-	padding-top: 0.39em;
-	padding-right: 1em;
+	padding-top: 0.5rem;
+	padding-right: 1rem;
 	font-weight: bold;
 }
 
@@ -431,13 +430,13 @@ textarea {
 
 .gluon-value-field-text {
 	flex: 3;
-	padding-top: 0.39em;
+	padding-top: 0.5rem;
 }
 
 .gluon-value-field-long {
 	flex: 10;
 	position: relative;
-	margin-top: 0.65em;
+	margin-top: 0.75rem;
 
 	input, select, input + label {
 		position: relative;
@@ -453,7 +452,7 @@ textarea {
 }
 
 .gluon-form-descr {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 .gluon-form-descr:empty,
@@ -463,12 +462,12 @@ textarea {
 
 .gluon-form-descr,
 .gluon-section-descr {
-	padding: 1em;
+	padding: 1rem;
 	background: #ececec;
 }
 
 .gluon-page-actions {
-	padding: 1em;
+	padding: 1rem;
 	background: #ececec;
 	text-align: right;
 	display: flex;
@@ -497,8 +496,8 @@ textarea {
 		text-align: center;
 		vertical-align: middle;
 		font-size: 180%;
-		width: 1.2em;
-		height: 1em;
+		width: 1.25rem;
+		height: 1rem;
 	}
 }
 
@@ -506,16 +505,16 @@ textarea {
 	color: #008000;
 
 	position: relative;
-	left: 21em;
+	left: 20rem;
 
 	input + & {
 		left: 0;
-		top: 0.04em;
+		top: 0.125rem;
 	}
 
 	&:first-child {
-		top: 0.53em;
-		left: -0.08em;
+		top: 0.5rem;
+		left: -0.125rem;
 	}
 
 	&::after {
@@ -527,7 +526,7 @@ textarea {
 	color: #800000;
 
 	position: relative;
-	top: -0.03em;
+	top: -0.125rem;
 
 	&::after {
 		content: '–';
@@ -538,7 +537,7 @@ textarea {
 	border: 1px dotted #ff0000;
 	background-color: #ffffff;
 	color: #000000;
-	padding: 0.5em;
+	padding: 0.5rem;
 }
 
 .errorbox {
@@ -555,11 +554,11 @@ textarea {
 
 .the-key {
 	text-align: left;
-	font-size: 1.4em;
+	font-size: 1.5rem;
 	background: lighten($ffyellow, 35);
 	border: 3pt dashed $ffmagenta;
-	margin-bottom: 0.5em;
-	padding: 0.5em
+	margin-bottom: 0.5rem;
+	padding: 0.5rem
 }
 
 h2 {
