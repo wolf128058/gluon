@@ -31,7 +31,6 @@ $red:       #ee3300;
 	cursor: pointer;
 	user-select: none;
 
-
 	font-size: 100%;
 	padding: 0.5em 1em;
 	color: rgba(0, 0, 0, 0.80);
@@ -44,7 +43,7 @@ $red:       #ee3300;
 	transition: 0.1s linear box-shadow;
 
 	&:active {
-		box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
 	}
 
 	&:focus {
@@ -52,7 +51,7 @@ $red:       #ee3300;
 	}
 
 	&:hover, &:focus {
-		background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.10));
 	}
 
 	&[disabled] {
@@ -101,36 +100,32 @@ ul.tabmenu {
 	padding: 0;
 	margin: 2em 0;
 	display: inline-flex;
-}
 
-ul.tabmenu li {
-	white-space: nowrap;
-	margin: 0 0.5em;
-	padding: 0;
-	text-align: center;
+	li {
+		white-space: nowrap;
+		margin: 0 0.5em;
+		padding: 0;
+		text-align: center;
 
-	a {
-		display: block;
-		text-decoration: none;
-		padding: 1em;
-		margin: 0;
-		color: #333;
-		border-radius: 2em;
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 1em;
+			margin: 0;
+			color: #333;
+			border-radius: 2em;
 
-		&:hover {
-			background: lighten($ffyellow, 35);
+			&:hover {
+				background: lighten($ffyellow, 35);
+			}
+		}
+
+		&.active a {
+			font-weight: bold;
+			background: white;
+			color: #333;
 		}
 	}
-
-	&.active a {
-		font-weight: bold;
-		background: white;
-		color: #333;
-	}
-}
-
-#maincontent ul {
-	margin-left: 2em;
 }
 
 .error {
@@ -144,47 +139,47 @@ ul.tabmenu li {
 	display: flex;
 	background: $ffmagenta;
 	color: #ffffff;
-}
 
-#menubar a:link.topcat,
-#menubar a:visited.topcat {
-	position: relative;
-	display: block;
-	padding: 0.5em;
-	text-decoration: none;
-	font-size: 80%;
-	font-weight: normal;
-	color: white;
-
-	&:hover, &:focus {
-		background: $ffyellow;
-		color: black;
-	}
-
-	&.active {
-		background: $ffyellow;
-		color: black;
-		font-weight: bold;
-	}
-}
-
-#menubar .hostinfo {
-	position: relative;
-	margin: 0;
-	padding: 0.5em;
-	flex: 1;
-	font-weight: bold;
-	font-size: 80%;
-}
-
-#menubar .hostinfo a {
-	&:link, &:visited {
+	a:link.topcat,
+	a:visited.topcat {
+		position: relative;
+		display: block;
+		padding: 0.5em;
 		text-decoration: none;
-		font-weight: bold;
+		font-size: 80%;
+		font-weight: normal;
 		color: white;
 
 		&:hover, &:focus {
-			text-decoration: underline;
+			background: $ffyellow;
+			color: black;
+		}
+
+		&.active {
+			font-weight: bold;
+			background: $ffzusatz;
+			color: white;
+		}
+	}
+
+	.hostinfo {
+		position: relative;
+		margin: 0;
+		padding: 0.5em;
+		flex: 1;
+		font-weight: bold;
+		font-size: 80%;
+
+		a {
+			&:link, &:visited {
+				text-decoration: none;
+				font-weight: bold;
+				color: white;
+
+				&:hover, &:focus {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }
@@ -193,51 +188,57 @@ ul.tabmenu li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-}
 
-#topmenu li {
-	display: inline-block;
+	li {
+		display: inline-block;
+	}
 }
 
 #maincontent {
-	padding: 0 1em 2em;
 	max-width: 60em;
 	min-width: 40em;
 	margin: 1em auto;
-}
+	background-color: rgba(255, 255, 255, 0.333);
+	padding: 0;
+	border-radius: 0.5rem;
 
-#maincontent p {
-	margin-bottom: 1em;
+	p {
+		margin-bottom: 1em;
+	}
+
+	ul {
+		margin-left: 2em;
+	}
 }
 
 .gluon-section {
 	margin: 0 0 1.3em;
 	padding: 0;
 	border: none;
-}
 
-.gluon-section:last-child {
-	margin-bottom: 0.7em;
-}
+	&:last-child {
+		margin-bottom: 0.7em;
+	}
 
-.gluon-section legend {
-	font-size: 1.4em;
-	font-weight: bold;
-	position: relative;
-	padding: 0;
-	margin-bottom: 0.5em;
-}
+	legend {
+		font-size: 1.4em;
+		font-weight: bold;
+		position: relative;
+		margin-bottom: 0.5em;
+		padding: 1rem;
+	}
 
-.gluon-section h2 {
-	margin: 0em 0 0.5em -0.5em;
-}
+	h2 {
+		margin: 0 0 0.5em -0.5em;
+	}
 
-.gluon-section h3 {
-	text-decoration: none;
-	font-weight: bold;
-	color: #555555;
-	margin: 0.25em;
-	font-size: 100%;
+	h3 {
+		text-decoration: none;
+		font-weight: bold;
+		color: #555555;
+		margin: 0.25em;
+		font-size: 100%;
+	}
 }
 
 .gluon-section-descr {
@@ -250,73 +251,72 @@ ul.tabmenu li {
 	margin-bottom: 1em;
 }
 
-input::placeholder {
-	color: #aaaaaa;
-}
-
-input::-webkit-input-placeholder {
-	color: #aaaaaa;
-}
-
-input[type=checkbox] {
-	display: none;
-
-	& + label {
-		display: inline-block;
-		position: relative;
-		width: 1em;
-		height: 1em;
-		margin: 0;
+input {
+	&::placeholder,
+	&::-webkit-input-placeholder {
+		color: #aaaaaa;
 	}
 
-	&:checked + label::after {
-		content: '✔';
-		color: $ffmagenta;
-		vertical-align: middle;
-		position: absolute;
-		top: 50%;
-		left: 0;
-		margin-top: -0.5em;
-		width: 100%;
-		text-align: center;
-		font-size: 1.7em;
-	}
-}
+	&[type=checkbox] {
+		display: none;
 
-input[type=radio] {
-	display: none;
+		& + label {
+			display: inline-block;
+			position: relative;
+			width: 1em;
+			height: 1em;
+			margin: 0;
+		}
 
-	& + label {
-		display: inline-block;
-		position: relative;
-		width: 0.8em;
-		height: 0.8em;
-		padding: 0.5em;
-		margin: 0.2em 0.2em 0.2em 0.1em;
-		border: none;
-		background: lighten($ffyellow, 30);
-		vertical-align: middle;
-		border-radius: 50%;
+		&:checked + label::after {
+			content: '✔';
+			color: $ffmagenta;
+			vertical-align: middle;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -0.5em;
+			width: 100%;
+			text-align: center;
+			font-size: 1.7em;
+		}
 	}
 
-	&:checked + label::after {
-		content: '•';
-		color: $ffmagenta;
-		vertical-align: middle;
-		position: absolute;
-		top: 50%;
-		left: 0;
-		margin-top: -0.4em;
-		width: 100%;
-		text-align: center;
-		font-size: 2em;
-	}
-}
+	&[type=radio] {
+		display: none;
 
-input[type=submit],
-input[type=reset],
-input[type=button] {
-	cursor: pointer;
+		& + label {
+			display: inline-block;
+			position: relative;
+			width: 0.8em;
+			height: 0.8em;
+			padding: 0.5em;
+			margin: 0.2em 0.2em 0.2em 0.1em;
+			border: none;
+			background: lighten($ffyellow, 30);
+			vertical-align: middle;
+			border-radius: 50%;
+		}
+
+		&:checked + label::after {
+			content: '•';
+			color: $ffmagenta;
+			vertical-align: middle;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -0.4em;
+			width: 100%;
+			text-align: center;
+			font-size: 2em;
+		}
+	}
+
+	&[type=submit],
+	&[type=reset],
+	&[type=button] {
+		cursor: pointer;
+	}
 }
 
 select,
@@ -347,11 +347,7 @@ input[type=checkbox] + label {
 		width: 1.4em;
 		border-left: 0.05em solid rgba(0, 0, 0, 0.25);
 		pointer-events: none;
-		background:
-			url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="8" height="5"><path fill="none" stroke="black" stroke-linejoin="bevel" d="M1,1L4,4L7,1"/></svg>')
-			center / 0.8em 0.5em
-			no-repeat
-		;
+		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="8" height="5"><path fill="none" stroke="black" stroke-linejoin="bevel" d="M1,1L4,4L7,1"/></svg>') center / 0.8em 0.5em no-repeat;
 		content: '';
 	}
 
@@ -389,9 +385,11 @@ input[type=password] {
 .gluon-button-submit {
 	background-color: $ffzusatz;
 	color: #fff;
-}
-.gluon-button-submit:active {
-	background: grey;
+
+	&:active {
+		background: grey;
+	}
+
 }
 
 .gluon-input-invalid {
@@ -458,16 +456,20 @@ textarea {
 	margin-bottom: 1em;
 }
 
-.gluon-form-descr:empty, .gluon-section-descr:empty {
+.gluon-form-descr:empty,
+.gluon-section-descr:empty {
 	display: none;
 }
 
-.gluon-form-descr, .gluon-section-descr, .gluon-page-actions {
+.gluon-form-descr,
+.gluon-section-descr {
 	padding: 1em;
 	background: #ececec;
 }
 
 .gluon-page-actions {
+	padding: 1em;
+	background: #ececec;
 	text-align: right;
 	display: flex;
 	flex-flow: row-reverse;
@@ -479,19 +481,25 @@ textarea {
 	border: none;
 }
 
-.gluon-value-error input,
-.gluon-value-error select {
-	background-color: #ffcccc;
+.gluon-value-error {
+	input,
+	select {
+		background-color: #ffcccc;
+	}
 }
 
-.gluon-add::after, .gluon-remove::after {
-	cursor: pointer;
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	font-size: 180%;
-	width: 1.2em;
-	height: 1em;
+.gluon-add,
+.gluon-remove {
+	&::after,
+	&::after {
+		cursor: pointer;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 180%;
+		width: 1.2em;
+		height: 1em;
+	}
 }
 
 .gluon-add {
@@ -538,12 +546,12 @@ textarea {
 	background-color: #FFCCCC;
 	padding: 5px;
 	margin-bottom: 5px;
-}
 
-.errorbox a {
-	color: #000000 !important;
-}
+	a {
+		color: #000000 !important;
+	}
 
+}
 
 .the-key {
 	text-align: left;
@@ -554,14 +562,6 @@ textarea {
 	padding: 0.5em
 }
 
-#menubar {
-	a:link.topcat.active,
-	a:visited.topcat.active {
-		background: $ffzusatz;
-		color: white;
-	}
-}
-
 h2 {
 	color: $ffzusatz;
 	padding: 1rem;
@@ -569,10 +569,6 @@ h2 {
 
 fieldset.gluon-section {
 	padding-top: 1rem;
-}
-
-.gluon-section legend {
-	padding: 1rem;
 }
 
 input[type="checkbox"] + label, select {
@@ -594,29 +590,14 @@ ul.tabmenu li a:hover,
 	background-color: #99d9F5;
 }
 
-#maincontent {
-	background-color: rgba(255, 255, 255, 0.333);
-	padding: 0;
-}
-
 .gluon-page-actions {
 	padding: 1rem;
+	border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .gluon-form-descr,
 .gluon-section-descr {
 	margin: 0 1rem 1rem;
-}
-
-#maincontent,
-.gluon-button,
-.gluon-form-descr,
-.gluon-section-descr {
-	border-radius: 0.5rem;
-}
-
-.gluon-page-actions {
-	border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .gluon-value:last-child {
@@ -627,5 +608,30 @@ textarea,
 .gluon-form > p,
 form > p {
 	margin: 0 1rem;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+
 }
 
