@@ -489,7 +489,6 @@ textarea {
 
 .gluon-add,
 .gluon-remove {
-	&::after,
 	&::after {
 		cursor: pointer;
 		display: inline-block;
@@ -616,7 +615,9 @@ form > p {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
+	#maincontent {
+		min-width: 40rem;
+	}
 }
 
 // Large devices (desktops, 992px and up)
